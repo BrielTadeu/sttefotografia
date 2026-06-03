@@ -1,0 +1,525 @@
+/*RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quattrocento", sans-serif;
+    
+}
+
+/*CONTAINER*/
+.container {
+    min-width: 320px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/*HEADER*/
+header {
+    background: #eee;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.7s ease;
+}
+
+.header-hidden { /* esconde */
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.header-show { /* mostrar */
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    
+}
+
+.logo img {
+    height: 30px;
+    width: 160px;
+}
+
+/*MENU*/
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 125px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+nav li:hover {
+    transform: scale(1.1);
+    background: #9e2b2b17;
+    border-radius: 5px;
+}
+
+/*BANNER*/
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.banner::after {
+    position: relative;
+    inset: 1;
+    background: rgba(0,0,0,0.3); /* escurece levemente */
+}
+.banner-img img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/*FRASE*/
+.frase {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 27px;
+}
+
+/*SOBRE*/
+.sobre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.sobre-texto {
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 24px;
+    color: #000000;
+}
+
+.sobre-img {
+    height: 500px;
+    width: 400px;
+    background: #9e2b2b;
+    border-radius: 10px; 
+}
+
+.sobre-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* deixa a imagem bonita e proporcional */
+    border-radius: 10px; /* opcional, deixa mais elegante */
+}
+
+/*        SERVIÇOS       */
+#servicos {
+    background: #e3c1c1;
+    padding: 60px 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+/* Card de serviços */
+.card {
+    position: relative;
+    width: auto;
+    height: 50vh;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay escuro */
+.card::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+/* Texto do card */
+.card figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card:hover figcaption {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/*        FEEDBACKS      */
+#feedbacks {
+    background-color: #fff8f8;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Título */
+#feedbacks h2 {
+    margin-bottom: 50px;
+}
+
+/* Container dos feedbacks */
+.feedback-container {
+    display: flex;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;
+    gap: 300px; /* espaço entre os dois */
+    flex-wrap: wrap; /* quebra no mobile */
+}
+
+/* Cada feedback */
+.feedback-item {
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Imagem circular */
+.feedback-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Nome */
+.feedback-item h3 {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* Texto */
+.feedback-item p {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/*          REDES        */
+#redes {
+    background: #e3c1c1;
+    padding: 20px 30px;
+}
+
+.redes-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* esquerda (imagem) */
+.redes-img {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    
+}
+
+.redes-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* agrupa imagem + texto */
+.bloco-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* espaço entre imagem e texto */
+}
+
+/* texto do meio */
+.texto-redes {
+    text-align: left; /* ESSENCIAL */
+}
+
+.texto-redes h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 1px;
+}
+
+/* direita */
+.contatos-redes {
+    text-align: right;
+}
+
+.contatos-redes ul {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* controla o espaço entre os itens */
+}
+
+.contatos-redes li {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.contatos-redes a {
+    text-decoration: none; /* remove sublinhado */
+    color: inherit; /* mantém mesma cor do texto */
+}
+
+.contatos-redes a:visited {
+    color: inherit;
+}
+
+.insta {
+    gap: 10px; /* espaço entre ícone e texto */
+    text-decoration: none;
+    color: black;
+}
+
+#btnTopo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #9e2b2b;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: none; /* começa escondido */
+    z-index: 999;
+    transition: 0.3s;
+}
+
+#btnTopo:hover {
+    background: #7a1f1f;
+    transform: scale(1.1);
+}
+
+.btn-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 100px; /* <-- aqui é o segredo */
+    width: 55px;
+    height: 55px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    animation: pulse 2s infinite;
+
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.1);
+    background: #1ebe5d;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37,211,102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+}
+
+
+/*       RESPONSIVO      */
+/* TABLETS */
+@media (max-width: 900px) {
+
+    .header-content {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-texto {
+        font-size: 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feedback-container {
+        gap: 40px;
+    }
+
+    .feedback-item img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .redes-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .contatos-redes {
+        text-align: center;
+    }
+}
+
+
+/* CELULARES */
+@media (max-width: 600px) {
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .banner-img img {
+        height: 50vh;
+    }
+
+    .frase {
+        font-size: 18px;
+        padding: 30px 10px;
+    }
+
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .sobre-texto {
+        font-size: 18px;
+    }
+
+    .sobre-img {
+        max-width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+        height: 280px;
+    }
+
+    .feedback-item img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #feedbacks h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .redes-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bloco-esquerda {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-redes {
+        text-align: center;
+    }
+
+    .contatos-redes {
+        text-align: center;
+    }
+
+    .btn-whatsapp {
+        right: 20px;
+        bottom: 90px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    #btnTopo {
+        right: 20px;
+        bottom: 20px;
+    }
+}

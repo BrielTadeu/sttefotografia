@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTATOS - STEFANY BERTOLDO FOTÓGRAFA</title>
+    <link rel="stylesheet" href="style/style-contato.css">
+    <link rel="icon" type="image/png" href="imagens/icone.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="imagens/logo-stefany-fotografia.png" width="60"></a>
+            <div>
+            </div>
+        </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="index.html#servicos">SERVIÇOS</a></li>
+                    <li><a href="sobre.html">SOBRE</a></li>
+                    <li><a href="contato.html">CONTATO</a></li>
+                </ul>
+            </nav>
+
+    </header>
+
+  <!-- TÍTULO -->
+  <section class="titulo">
+        <h2>Vamos conversar?</h2>
+  </section>
+
+<section class="contato">
+    <div class="contato-container">
+        <p>
+            Se chegou até aqui é porque temos algo em comum ou se identificou com o meu trabalho.
+            <br>
+            Como posso ajudar a preservar as memórias mais importantes da sua vida?
+        </p>
+
+        <form id="form-contato" action="https://formsubmit.co/stefanybertoldofotografia@gmail.com" method="POST">
+
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="hidden"
+                    name="_next"
+                    value="https:///www.sttefotografia.com.br/contato.html"><!-- mudar para o dominio do site -->
+
+            <input type="text" name="nome" placeholder="Digite seu nome" required>
+
+            <input type="email" name="email" placeholder="Digite seu email" required>
+
+            <input type="tel" name="telefone" placeholder="Digite seu telefone">
+
+            <textarea name="mensagem" placeholder="Digite sua mensagem"></textarea>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+    </div>
+<dialog id="popupSucesso">
+  <h2>Sucesso!</h2>
+  <p>Seu formulário foi enviado com sucesso.</p>
+  <button id="fecharPopup">OK</button>
+</dialog>
+</section>
+
+<a href="https://wa.me/5511948254929" 
+   class="btn-whatsapp" 
+   target="_blank">
+   <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="script/script.js"></script>
+
+</body>
+</html>
