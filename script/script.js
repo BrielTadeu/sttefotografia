@@ -49,3 +49,5 @@ fecharPopup.addEventListener("click", () => {
     window.location.href =
     "https://brieltadeu.github.io/sttefotografia/contato.html";
 });
+/* Analytics */
+
