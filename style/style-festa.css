@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Quattrocento", sans-serif;
-    
+
 }
 
 /*CONTAINER*/
@@ -25,12 +25,14 @@ header {
     transition: all 0.7s ease;
 }
 
-.header-hidden { /* esconde */
+.header-hidden {
+    /* esconde */
     transform: translateY(-100%);
     opacity: 0;
 }
 
-.header-show { /* mostrar */
+.header-show {
+    /* mostrar */
     transform: translateY(0);
     opacity: 1;
 }
@@ -46,7 +48,7 @@ header {
     display: flex;
     align-items: center;
     gap: 17px;
-    
+
 }
 
 .logo img {
@@ -73,6 +75,7 @@ nav li:hover {
     background: #9e2b2b17;
     border-radius: 5px;
 }
+
 body {
     font-family: Arial, sans-serif;
     background: #f8f8f8;
@@ -91,7 +94,7 @@ h1 {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    
+
 }
 
 .galeria img {
@@ -100,7 +103,7 @@ h1 {
     height: auto;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #btnTopo {
@@ -119,7 +122,7 @@ h1 {
     cursor: pointer;
     font-size: 18px;
     z-index: 9999;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: none;
     transition: 0.3s;
 }
@@ -132,7 +135,8 @@ h1 {
 .btn-whatsapp {
     position: fixed;
     bottom: 30px;
-    right: 100px; /* <-- aqui é o segredo */
+    right: 100px;
+    /* <-- aqui é o segredo */
     width: 55px;
     height: 55px;
     background: #25D366;
@@ -144,7 +148,7 @@ h1 {
     font-size: 26px;
     text-decoration: none;
     z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
     animation: pulse 2s infinite;
 
@@ -156,9 +160,17 @@ h1 {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37,211,102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 

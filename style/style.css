@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Quattrocento", sans-serif;
-    
+
 }
 
 /*CONTAINER*/
@@ -14,23 +14,24 @@
     margin: 0 auto;
 }
 
-
 /*HEADER*/
 header {
-    background: #eee;
-    padding: 15px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
     z-index: 1000;
-    transition: all 0.7s ease;
 }
 
-.header-hidden { /* esconde */
+.header-hidden {
+    /* esconde */
     transform: translateY(-100%);
     opacity: 0;
 }
 
-.header-show { /* mostrar */
+.header-show {
+    /* mostrar */
     transform: translateY(0);
     opacity: 1;
 }
@@ -46,7 +47,8 @@ header {
     display: flex;
     align-items: center;
     gap: 17px;
-    
+    margin-top: 25px;
+
 }
 
 .logo img {
@@ -64,7 +66,8 @@ nav ul {
 nav a {
     text-decoration: none;
     color: #000;
-    font-weight: 500;
+    font-weight: 700;
+    padding: 12px;
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -79,16 +82,21 @@ nav li:hover {
     position: relative;
     width: 100%;
     height: auto;
+    margin-top: 0px;
 }
+
 .banner::after {
     position: relative;
     inset: 1;
-    background: rgba(0,0,0,0.3); /* escurece levemente */
+    background: rgba(0, 0, 0, 0.3);
+    /* escurece levemente */
 }
+
 .banner-img img {
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     object-fit: cover;
+    margin-top: -20vh;
 }
 
 /*FRASE*/
@@ -119,14 +127,16 @@ nav li:hover {
     height: 500px;
     width: 400px;
     background: #9e2b2b;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .sobre-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* deixa a imagem bonita e proporcional */
-    border-radius: 10px; /* opcional, deixa mais elegante */
+    object-fit: cover;
+    /* deixa a imagem bonita e proporcional */
+    border-radius: 10px;
+    /* opcional, deixa mais elegante */
 }
 
 /*        SERVIÇOS       */
@@ -134,7 +144,7 @@ nav li:hover {
     background: #e3c1c1;
     padding: 60px 0;
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .cards {
@@ -208,6 +218,7 @@ nav li:hover {
     background-color: #fff8f8;
     text-align: center;
     padding: 80px 20px;
+    font-size: 18px;
 }
 
 /* Título */
@@ -218,10 +229,13 @@ nav li:hover {
 /* Container dos feedbacks */
 .feedback-container {
     display: flex;
-    justify-content: center; /* centraliza horizontal */
+    justify-content: center;
+    /* centraliza horizontal */
     align-items: center;
-    gap: 300px; /* espaço entre os dois */
-    flex-wrap: wrap; /* quebra no mobile */
+    gap: 300px;
+    /* espaço entre os dois */
+    flex-wrap: wrap;
+    /* quebra no mobile */
 }
 
 /* Cada feedback */
@@ -268,7 +282,7 @@ nav li:hover {
     width: 150px;
     height: 150px;
     overflow: hidden;
-    
+
 }
 
 .redes-img img {
@@ -281,12 +295,14 @@ nav li:hover {
 .bloco-esquerda {
     display: flex;
     align-items: center;
-    gap: 20px; /* espaço entre imagem e texto */
+    gap: 20px;
+    /* espaço entre imagem e texto */
 }
 
 /* texto do meio */
 .texto-redes {
-    text-align: left; /* ESSENCIAL */
+    text-align: left;
+    /* ESSENCIAL */
 }
 
 .texto-redes h2 {
@@ -307,7 +323,8 @@ nav li:hover {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* controla o espaço entre os itens */
+    gap: 10px;
+    /* controla o espaço entre os itens */
 }
 
 .contatos-redes li {
@@ -316,8 +333,10 @@ nav li:hover {
 }
 
 .contatos-redes a {
-    text-decoration: none; /* remove sublinhado */
-    color: inherit; /* mantém mesma cor do texto */
+    text-decoration: none;
+    /* remove sublinhado */
+    color: inherit;
+    /* mantém mesma cor do texto */
 }
 
 .contatos-redes a:visited {
@@ -325,7 +344,8 @@ nav li:hover {
 }
 
 .insta {
-    gap: 10px; /* espaço entre ícone e texto */
+    gap: 10px;
+    /* espaço entre ícone e texto */
     text-decoration: none;
     color: black;
 }
@@ -341,7 +361,8 @@ nav li:hover {
     border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
-    display: none; /* começa escondido */
+    display: none;
+    /* começa escondido */
     z-index: 999;
     transition: 0.3s;
 }
@@ -354,7 +375,8 @@ nav li:hover {
 .btn-whatsapp {
     position: fixed;
     bottom: 30px;
-    right: 100px; /* <-- aqui é o segredo */
+    right: 100px;
+    /* <-- aqui é o segredo */
     width: 55px;
     height: 55px;
     background: #25D366;
@@ -366,7 +388,7 @@ nav li:hover {
     font-size: 26px;
     text-decoration: none;
     z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
     animation: pulse 2s infinite;
 
@@ -378,9 +400,17 @@ nav li:hover {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37,211,102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 
