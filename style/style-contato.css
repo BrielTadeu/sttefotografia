@@ -4,12 +4,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Quattrocento", sans-serif;
-    
 }
 
 body {
     background-color: #d9bcbc;
-
+    margin: 0;
+    padding: 0;
+    padding-top: 110px;
+    /* Protege o conteúdo sob o header fixo */
 }
 
 /*CONTAINER*/
@@ -17,16 +19,28 @@ body {
     min-width: 320px;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/*HEADER*/
+/*HEADER - UNIFICADO IGUAL À INDEX*/
 header {
-    background: #eee;
-    padding: 15px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
     z-index: 1000;
     transition: all 0.7s ease;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.header-show {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .header-content {
@@ -34,13 +48,13 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 10px 0;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 17px;
-    
 }
 
 .logo img {
@@ -48,17 +62,18 @@ header {
     width: 160px;
 }
 
-/*MENU*/
+/*MENU - UNIFICADO IGUAL À INDEX*/
 nav ul {
     display: flex;
     list-style: none;
-    gap: 125px;
+    gap: 40px;
 }
 
 nav a {
     text-decoration: none;
     color: #000;
-    font-weight: 500;
+    font-weight: 700;
+    padding: 12px;
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -68,10 +83,10 @@ nav li:hover {
     border-radius: 5px;
 }
 
+/* CONTEÚDO DE CONTATO */
 .titulo {
     text-align: center;
-    padding: 10px 20px; /* antes era 20px */
-    background-color: #d9bcbc;
+    padding: 20px;
     font-size: 18px;
 }
 
@@ -90,44 +105,25 @@ nav li:hover {
     line-height: 1.8;
     margin-bottom: 20px;
     margin-top: 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    max-width: 100%;
-}
-
-/* Campos formulario */
-textarea {
-  height: 120px;
-  resize: none;
-}
-
-input, textarea {
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 0.5px solid #3f3f3f;
-  border-radius: 10px;
-  outline: none;
+    text-align: center;
 }
 
 form {
     width: 70%;
     display: flex;
     flex-direction: column;
+    gap: 7px;
 }
-
 
 input,
 textarea {
     width: 100%;
     padding: 14px;
-    border: none;
-    border-radius: 4px;
+    border: 0.5px solid #3f3f3f;
+    border-radius: 10px;
     outline: none;
     font-size: 16px;
+    margin-bottom: 10px;
 }
 
 textarea {
@@ -135,38 +131,47 @@ textarea {
     resize: vertical;
 }
 
+/* BOTÃO ENVIAR */
 button {
-    width: 160px;
-    margin: 20px auto 0;
-    padding: 14px;
+    width: 130px;
+    padding: 12px;
+    background-color: #1e73be;
+    color: #fff;
     border: none;
-    background: #1e73be;
-    color: white;
     cursor: pointer;
-    border-radius: 4px;
+    align-self: flex-end;
+    border-radius: 8px;
     font-size: 16px;
-}
-
-
-/* BOTÃO */
-button {
-  width: 100px;
-  padding: 10px;
-  background-color: #1e73be;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  align-self: flex-end;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #155a94;
+    background-color: #155a94;
 }
 
+/* POP-UP / DIALOG */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog h2 {
+    color: #2e7d32;
+    margin-top: 0;
+}
+
+/* BOTÃO FIXO WHATSAPP */
 .btn-whatsapp {
     position: fixed;
     bottom: 30px;
-    right: 100px; /* <-- aqui é o segredo */
+    right: 30px;
     width: 55px;
     height: 55px;
     background: #25D366;
@@ -178,10 +183,9 @@ button:hover {
     font-size: 26px;
     text-decoration: none;
     z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
     animation: pulse 2s infinite;
-
 }
 
 .btn-whatsapp:hover {
@@ -189,98 +193,65 @@ button:hover {
     background: #1ebe5d;
 }
 
-dialog {
-  border: none;
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-/* Fundo escuro atrás do pop-up */
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-dialog h2 {
-  color: #2e7d32;
-  margin-top: 0;
-}
-
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37,211,102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
-/*       RESPONSIVO      */
-/* TABLETS */
-@media (max-width: 900px) {
+/* =======================================================
+   RESPONSIVO OTIMIZADO
+   ======================================================= */
 
+/* TABLETS (Até 992px) */
+@media (max-width: 992px) {
     .header-content {
         justify-content: center;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    nav ul {
         gap: 20px;
     }
 
-    nav ul {
-        gap: 25px;
-    }
-
-    .contato {
-        padding: 30px 20px;
-    }
-
     form {
-        max-width: 500px;
-    }
-
-    .btn-whatsapp {
-        right: 85px;
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
+        width: 90%;
     }
 }
 
-/* CELULARES */
+/* TELEMÓVEIS (Até 600px) */
 @media (max-width: 600px) {
-
-    .container {
-        width: 95%;
-        padding: 0 10px;
+    body {
+        padding-top: 130px;
+        /* Mais espaço superior para acomodar o menu em quebra */
     }
 
     .header-content {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        margin-top: 10px;
-    }
-
-    .titulo {
-        padding: 15px 10px;
+        gap: 10px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .titulo h2 {
-        font-size: 1.3rem;
-    }
-
-    .contato {
-        padding: 20px 10px;
+        font-size: 1.4rem;
     }
 
     form {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    input,
-    textarea {
         width: 100%;
     }
 

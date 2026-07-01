@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Quattrocento", sans-serif;
-
 }
 
 /*CONTAINER*/
@@ -12,27 +11,26 @@
     min-width: 320px;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-
-/*HEADER*/
+/*HEADER - IGUAL À INDEX*/
 header {
-    background: #eee;
-    padding: 15px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
     z-index: 1000;
     transition: all 0.7s ease;
 }
 
 .header-hidden {
-    /* esconde */
     transform: translateY(-100%);
     opacity: 0;
 }
 
 .header-show {
-    /* mostrar */
     transform: translateY(0);
     opacity: 1;
 }
@@ -42,13 +40,13 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 10px 0;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 17px;
-
 }
 
 .logo img {
@@ -56,17 +54,18 @@ header {
     width: 160px;
 }
 
-/*MENU*/
+/*MENU - IGUAL À INDEX*/
 nav ul {
     display: flex;
     list-style: none;
-    gap: 125px;
+    gap: 40px;
 }
 
 nav a {
     text-decoration: none;
     color: #000;
-    font-weight: 500;
+    font-weight: 700;
+    padding: 12px;
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -77,11 +76,11 @@ nav li:hover {
 }
 
 body {
-    font-family: Arial, sans-serif;
     background: #f8f8f8;
     text-align: center;
     margin: 0;
     padding: 0;
+    padding-top: 100px;
 }
 
 h1 {
@@ -94,7 +93,6 @@ h1 {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-
 }
 
 .galeria img {
@@ -106,6 +104,7 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* BOTÕES FIXOS */
 #btnTopo {
     position: fixed;
     bottom: 30px;
@@ -116,14 +115,13 @@ h1 {
     color: white;
     border: none;
     border-radius: 50%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-size: 18px;
     z-index: 9999;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
     transition: 0.3s;
 }
 
@@ -135,8 +133,7 @@ h1 {
 .btn-whatsapp {
     position: fixed;
     bottom: 30px;
-    right: 100px;
-    /* <-- aqui é o segredo */
+    right: 90px;
     width: 55px;
     height: 55px;
     background: #25D366;
@@ -151,7 +148,6 @@ h1 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
     animation: pulse 2s infinite;
-
 }
 
 .btn-whatsapp:hover {
@@ -173,13 +169,16 @@ h1 {
     }
 }
 
-
-/*       RESPONSIVO      */
-/* TABLETS */
-@media (max-width: 900px) {
+/* RESPONSIVO OTIMIZADO */
+@media (max-width: 992px) {
+    .header-content {
+        justify-content: center;
+        gap: 15px;
+        padding: 15px 0;
+    }
 
     nav ul {
-        gap: 40px;
+        gap: 20px;
     }
 
     .galeria {
@@ -189,47 +188,28 @@ h1 {
     .galeria img {
         max-width: 100%;
     }
-
-    .btn-whatsapp {
-        right: 85px;
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-    }
-
-    #btnTopo {
-        width: 45px;
-        height: 45px;
-    }
 }
 
-/* CELULARES */
 @media (max-width: 600px) {
-
-    .container {
-        width: 95%;
+    body {
+        padding-top: 130px;
     }
 
     .header-content {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
+        gap: 10px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .galeria {
         padding: 10px;
         gap: 15px;
-    }
-
-    .galeria img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
     }
 
     h1 {
@@ -239,7 +219,7 @@ h1 {
 
     .btn-whatsapp {
         right: 20px;
-        bottom: 90px;
+        bottom: 85px;
         width: 50px;
         height: 50px;
         font-size: 22px;
@@ -248,7 +228,7 @@ h1 {
     #btnTopo {
         right: 20px;
         bottom: 20px;
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 }
