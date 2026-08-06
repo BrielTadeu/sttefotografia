@@ -103,13 +103,10 @@ h1 {
     width: 100%;
 }
 
-#casamento1-1,
-#casamento1-2,
-#casamento2-1,
-#casamento2-2 {
+#casamento {
     width: 100%;
     max-width: 550px;
-    height: auto;
+    height: 75a0px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -196,10 +193,7 @@ h1 {
         gap: 20px;
     }
 
-    #casamento1-1,
-    #casamento1-2,
-    #casamento2-1,
-    #casamento2-2 {
+    #casamento {
         max-width: 450px;
     }
 }
@@ -232,10 +226,7 @@ h1 {
         gap: 20px;
     }
 
-    #casamento1-1,
-    #casamento1-2,
-    #casamento2-1,
-    #casamento2-2 {
+    #casamento {
         max-width: 100%;
     }
 
