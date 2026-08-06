@@ -23,24 +23,19 @@ if (btn) {
 }
 
 /* Comportamento do menu ao rolar (Sumiço dinâmico) */
-let lastScrollTop = 0;
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Se rolar para baixo e passar de 100px, esconde o menu
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        header.classList.add("header-hidden");
-        header.classList.remove("header-show");
-    } else {
-        // Se rolar para cima, mostra o menu
+    if (scrollTop <= 10) {
         header.classList.remove("header-hidden");
         header.classList.add("header-show");
+    } else {
+        header.classList.add("header-hidden");
+        header.classList.remove("header-show");
     }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
+}, { passive: true });
 
 /* pop-up */
 const popup = document.getElementById("popupSucesso");
